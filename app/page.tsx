@@ -98,13 +98,13 @@ const utilitySkills = [
 const otherSkills = [
   {
     emoji: "🔎",
-    name: "hunt.md",
+    name: "fix.md",
     tagline:
-      "A systematic bug-hunting workflow. Explore first, instrument strategically, read the logs, fix surgically, verify clean.",
-    commands: "/hunt",
-    install: "npx skills add amajorai/hunt.md",
-    href: "https://github.com/amajorai/hunt.md",
-    badges: repoBadges("amajorai/hunt.md", "experimental"),
+      "A systematic bug-fixing workflow. Explore first, instrument strategically, read the logs, fix surgically, verify clean with Playwright, Maestro, or Computer Use.",
+    commands: "/fix",
+    install: "npx skills add amajorai/fix.md",
+    href: "https://github.com/amajorai/fix.md",
+    badges: repoBadges("amajorai/fix.md", "experimental"),
     isNew: true,
   },
   {
