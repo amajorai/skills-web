@@ -97,6 +97,16 @@ const utilitySkills = [
 
 const otherSkills = [
   {
+    emoji: "🌼",
+    name: "amajor.md",
+    tagline:
+      "Master skill directory. One install, discover every A Major skill. Built for agents to find the right tool for any task.",
+    commands: "/amajor",
+    install: "npx skills add amajorai/amajor.md",
+    href: "https://github.com/amajorai/amajor.md",
+    badges: repoBadges("amajorai/amajor.md", "beta"),
+  },
+  {
     emoji: "🔎",
     name: "fix.md",
     tagline:
