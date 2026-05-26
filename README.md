@@ -1,21 +1,28 @@
-# Next.js template
+# A Major Skills
 
-This is a Next.js template with shadcn/ui.
+Landing page for [A Major](https://amajor.ai) skills — ship.md, vibe.md, party.md, replay.md, and 30+ utility skills for Claude Code.
 
-## Adding components
+**Live** - https://web-amajorhq.vercel.app
 
-To add components to your app, run the following command:
+## Stack
+
+- Next.js 16 + React 19
+- Tailwind CSS 4
+- shadcn/ui (Base UI)
+- HugeIcons
+- Bun
+
+## Dev
 
 ```bash
-npx shadcn@latest add button
+bun install
+bun dev
 ```
 
-This will place the ui components in the `components` directory.
+## Skills
 
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
-```
+- [ship.md](https://github.com/amajorai/ship.md) - feature shipping workflow
+- [vibe.md](https://github.com/amajorai/vibe.md) - production server setup
+- [party.md](https://github.com/amajorai/party.md) - 24/7 autonomous build agent
+- [replay.md](https://github.com/amajorai/replay.md) - app recording and sharing
+- [amajorai/skills](https://github.com/amajorai/skills) - 30+ utility skills
