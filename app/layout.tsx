@@ -1,6 +1,4 @@
 import { Geist, Geist_Mono, Inter } from "next/font/google"
-import { GlimmProvider } from "glimm/next"
-
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { GlimmIntro } from "@/components/glimm-intro"
@@ -28,10 +26,8 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <GlimmProvider>
-            <GlimmIntro />
-            {children}
-          </GlimmProvider>
+          <GlimmIntro />
+          {children}
         </ThemeProvider>
       </body>
     </html>
