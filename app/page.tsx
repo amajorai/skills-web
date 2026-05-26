@@ -59,8 +59,6 @@ const flagships = [
   },
 ]
 
-const skillsBadges = repoBadges("amajorai/skills", "experimental")
-
 const utilitySkills = [
   "edge-cases",
   "e2e",
@@ -97,6 +95,30 @@ const utilitySkills = [
   "youtube-to-skill",
 ]
 
+const otherSkills = [
+  {
+    emoji: "🔎",
+    name: "hunt.md",
+    tagline:
+      "A systematic bug-hunting workflow. Explore first, instrument strategically, read the logs, fix surgically, verify clean.",
+    commands: "/hunt",
+    install: "npx skills add amajorai/hunt.md",
+    href: "https://github.com/amajorai/hunt.md",
+    badges: repoBadges("amajorai/hunt.md", "experimental"),
+    isNew: true,
+  },
+  {
+    emoji: "⚡",
+    name: "amajorai/skills",
+    tagline:
+      "Smaller skills people don't think about when shipping. Edge cases, E2E, auth, payments, SEO, CI, and more.",
+    commands: `+${utilitySkills.length} skills`,
+    install: "npx skills add amajorai/skills",
+    href: "https://github.com/amajorai/skills",
+    badges: repoBadges("amajorai/skills", "experimental"),
+  },
+]
+
 function SkillCard({ emoji, name, tagline, commands, install, href, badges, isNew }: {
   emoji: string; name: string; tagline: string; commands: string;
   install: string; href: string; badges: { src: string; alt: string }[]; isNew?: boolean
@@ -112,13 +134,13 @@ function SkillCard({ emoji, name, tagline, commands, install, href, badges, isNe
         <span className="font-heading text-xl font-medium">
           {emoji} {name}
         </span>
+        <span className="font-mono text-xs text-muted-foreground">
+          {commands}
+        </span>
         {isNew && (
           // eslint-disable-next-line @next/next/no-img-element
           <img src="https://shieldcn.dev/badge/new-green.svg?size=xs" alt="New" height={20} />
         )}
-        <span className="font-mono text-xs text-muted-foreground">
-          {commands}
-        </span>
       </div>
       <p className="text-sm text-muted-foreground leading-relaxed mb-3">
         {tagline}
@@ -171,46 +193,11 @@ export default function Page() {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-x-12 gap-y-12">
-          <div className="w-full sm:w-[calc(25%-2.25rem)]">
-          <SkillCard
-            emoji="🔎"
-            name="hunt.md"
-            tagline="A systematic bug-hunting workflow. Explore first, instrument strategically, read the logs, fix surgically, verify clean."
-            commands="/hunt"
-            install="npx skills add amajorai/hunt.md"
-            href="https://github.com/amajorai/hunt.md"
-            badges={repoBadges("amajorai/hunt.md", "experimental")}
-            isNew
-          />
-          </div>
-          <div className="w-full sm:w-[calc(25%-2.25rem)]">
-          <a
-            href="https://github.com/amajorai/skills"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-xl p-4 -m-4 hover:bg-muted/50 transition-colors"
-          >
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-              <span className="font-heading text-xl font-medium">
-                ⚡ amajorai/skills
-              </span>
-              <span className="font-mono text-xs text-muted-foreground">
-                +{utilitySkills.length} skills
-              </span>
+          {otherSkills.map((s) => (
+            <div key={s.name} className="w-full sm:w-[calc(25%-2.25rem)]">
+              <SkillCard {...s} />
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-              Smaller skills people don&apos;t think about when shipping. Edge cases,
-              E2E, auth, payments, SEO, CI, and more.
-            </p>
-            <div className="flex flex-wrap gap-1 mb-2">
-              {skillsBadges.map((b) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img key={b.alt} src={b.src} alt={b.alt} height={20} />
-              ))}
-            </div>
-            <CopyCommand command="npx skills add amajorai/skills" />
-          </a>
-          </div>
+          ))}
         </div>
       </section>
     </main>
