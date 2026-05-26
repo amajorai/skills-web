@@ -97,16 +97,6 @@ const utilitySkills = [
 
 const otherSkills = [
   {
-    emoji: "🌼",
-    name: "amajor.md",
-    tagline:
-      "Master skill directory. One install, discover every A Major skill. Built for agents to find the right tool for any task.",
-    commands: "/amajor",
-    install: "npx skills add amajorai/amajor.md",
-    href: "https://github.com/amajorai/amajor.md",
-    badges: repoBadges("amajorai/amajor.md", "beta"),
-  },
-  {
     emoji: "🔎",
     name: "fix.md",
     tagline:
@@ -116,6 +106,16 @@ const otherSkills = [
     href: "https://github.com/amajorai/fix.md",
     badges: repoBadges("amajorai/fix.md", "experimental"),
     isNew: true,
+  },
+  {
+    emoji: "🌼",
+    name: "amajor.md",
+    tagline:
+      "Master skill directory. One install, discover every A Major skill. Built for agents to find the right tool for any task.",
+    commands: "/amajor",
+    install: "npx skills add amajorai/amajor.md",
+    href: "https://github.com/amajorai/amajor.md",
+    badges: repoBadges("amajorai/amajor.md", "beta"),
   },
   {
     emoji: "⚡",
@@ -169,7 +169,7 @@ function SkillCard({ emoji, name, tagline, commands, install, href, badges, isNe
 export default function Page() {
   return (
     <main className="min-h-svh px-6 py-24 flex flex-col justify-center">
-      <section className="mb-10 w-full max-w-2xl mx-auto">
+      <section className="mb-20 w-full max-w-2xl mx-auto">
         <h1 className="font-heading text-4xl font-medium tracking-tight mb-4">
           A Major Skills
         </h1>
@@ -188,8 +188,7 @@ export default function Page() {
       </section>
 
       <section className="mb-16 max-w-screen-2xl mx-auto">
-        <p className="font-mono text-xs text-muted-foreground mb-8">Flagship</p>
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-x-12 gap-y-12">
+<div className="grid grid-cols-1 sm:grid-cols-4 gap-x-12 gap-y-12">
           {flagships.map((f) => (
             <SkillCard key={f.name} {...f} />
           ))}
@@ -197,12 +196,7 @@ export default function Page() {
       </section>
 
       <section className="max-w-screen-2xl mx-auto">
-        <div className="flex justify-center">
-          <div className="w-full sm:w-[calc(50%-1.5rem)]">
-            <p className="font-mono text-xs text-muted-foreground mb-8">Others</p>
-          </div>
-        </div>
-        <div className="flex flex-wrap justify-center gap-x-12 gap-y-12">
+<div className="flex flex-wrap justify-center gap-x-12 gap-y-12">
           {otherSkills.map((s) => (
             <div key={s.name} className="w-full sm:w-[calc(25%-2.25rem)]">
               <SkillCard {...s} />
