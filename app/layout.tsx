@@ -1,7 +1,9 @@
 import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { GlimmProvider } from "glimm/next"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { GlimmIntro } from "@/components/glimm-intro"
 import { cn } from "@/lib/utils";
 
 const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
@@ -25,7 +27,12 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", inter.variable, geistHeading.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <GlimmProvider>
+            <GlimmIntro />
+            {children}
+          </GlimmProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
