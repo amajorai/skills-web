@@ -55,6 +55,7 @@ const flagships = [
     install: "npx skills add amajorai/replay.md",
     href: "https://github.com/amajorai/replay.md",
     badges: repoBadges("amajorai/replay.md", "experimental"),
+    isNew: true,
   },
 ]
 
@@ -96,6 +97,43 @@ const utilitySkills = [
   "youtube-to-skill",
 ]
 
+function SkillCard({ emoji, name, tagline, commands, install, href, badges, isNew }: {
+  emoji: string; name: string; tagline: string; commands: string;
+  install: string; href: string; badges: { src: string; alt: string }[]; isNew?: boolean
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block rounded-xl p-4 -m-4 hover:bg-muted/50 transition-colors"
+    >
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-2">
+        <span className="font-heading text-xl font-medium">
+          {emoji} {name}
+        </span>
+        {isNew && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src="https://shieldcn.dev/badge/new-green.svg?size=xs" alt="New" height={20} />
+        )}
+        <span className="font-mono text-xs text-muted-foreground">
+          {commands}
+        </span>
+      </div>
+      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+        {tagline}
+      </p>
+      <CopyCommand command={install} />
+      <div className="flex flex-wrap items-center gap-1.5 mt-2">
+        {badges.map((b) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={b.alt} src={b.src} alt={b.alt} height={20} />
+        ))}
+      </div>
+    </a>
+  )
+}
+
 export default function Page() {
   return (
     <main className="min-h-svh px-6 py-24 flex flex-col justify-center">
@@ -117,75 +155,63 @@ export default function Page() {
         </p>
       </section>
 
-      <section className="mb-32 max-w-screen-2xl mx-auto">
+      <section className="mb-16 max-w-screen-2xl mx-auto">
         <p className="font-mono text-xs text-muted-foreground mb-8">Flagship</p>
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-x-12 gap-y-12">
           {flagships.map((f) => (
-            <a
-              key={f.name}
-              href={f.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-xl p-4 -m-4 hover:bg-muted/50 transition-colors"
-            >
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-                <span className="font-heading text-xl font-medium">
-                  {f.emoji} {f.name}
-                </span>
-                <span className="font-mono text-xs text-muted-foreground">
-                  {f.commands}
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                {f.tagline}
-              </p>
-              <div className="flex flex-wrap items-center gap-2">
-                <CopyCommand command={f.install} />
-                {f.badges.map((b) => (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img key={b.alt} src={b.src} alt={b.alt} height={20} />
-                ))}
-              </div>
-            </a>
+            <SkillCard key={f.name} {...f} />
           ))}
         </div>
       </section>
 
-      <section className="max-w-2xl mx-auto">
-        <p className="font-mono text-xs text-muted-foreground mb-8">Others</p>
-        <a
-          href="https://github.com/amajorai/skills"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block rounded-xl p-4 -m-4 hover:bg-muted/50 transition-colors"
-        >
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-            <span className="font-heading text-xl font-medium">
-              ⚡ amajorai/skills
-            </span>
-            <span className="font-mono text-xs text-muted-foreground">
-              +{utilitySkills.length} skills
-            </span>
+      <section className="max-w-screen-2xl mx-auto">
+        <div className="flex justify-center">
+          <div className="w-full sm:w-[calc(50%-1.5rem)]">
+            <p className="font-mono text-xs text-muted-foreground mb-8">Others</p>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-            Smaller skills people don&apos;t think about when shipping. Edge cases,
-            E2E, auth, payments, SEO, CI, and more.
-          </p>
-          <div className="flex flex-wrap gap-x-4 gap-y-1.5 mb-6">
-            {utilitySkills.map((s) => (
-              <span key={s} className="font-mono text-xs text-muted-foreground">
-                {s}
+        </div>
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-12">
+          <div className="w-full sm:w-[calc(25%-2.25rem)]">
+          <SkillCard
+            emoji="🔎"
+            name="hunt.md"
+            tagline="A systematic bug-hunting workflow. Explore first, instrument strategically, read the logs, fix surgically, verify clean."
+            commands="/hunt"
+            install="npx skills add amajorai/hunt.md"
+            href="https://github.com/amajorai/hunt.md"
+            badges={repoBadges("amajorai/hunt.md", "experimental")}
+            isNew
+          />
+          </div>
+          <div className="w-full sm:w-[calc(25%-2.25rem)]">
+          <a
+            href="https://github.com/amajorai/skills"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-xl p-4 -m-4 hover:bg-muted/50 transition-colors"
+          >
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+              <span className="font-heading text-xl font-medium">
+                ⚡ amajorai/skills
               </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
+              <span className="font-mono text-xs text-muted-foreground">
+                +{utilitySkills.length} skills
+              </span>
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+              Smaller skills people don&apos;t think about when shipping. Edge cases,
+              E2E, auth, payments, SEO, CI, and more.
+            </p>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {skillsBadges.map((b) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={b.alt} src={b.src} alt={b.alt} height={20} />
+              ))}
+            </div>
             <CopyCommand command="npx skills add amajorai/skills" />
-            {skillsBadges.map((b) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={b.alt} src={b.src} alt={b.alt} height={20} />
-            ))}
+          </a>
           </div>
-        </a>
+        </div>
       </section>
     </main>
   )

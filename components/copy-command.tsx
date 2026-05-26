@@ -28,8 +28,8 @@ export function CopyCommand({ command }: { command: string }) {
       >
         <HugeiconsIcon
           icon={copied ? Tick01Icon : Copy01Icon}
-          size={12}
-          strokeWidth={1.5}
+          size={13}
+          strokeWidth={2}
         />
       </button>
     </div>
