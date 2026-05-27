@@ -15,6 +15,42 @@ function repoBadges(repo: string, status: "beta" | "experimental") {
   ]
 }
 
+const utilitySkills = [
+  "edge-cases",
+  "e2e",
+  "icons",
+  "hardening",
+  "seo",
+  "lighthouse",
+  "legal-compliance",
+  "app-store-compliance",
+  "aso",
+  "better-t-stack",
+  "distill-skill",
+  "mirror",
+  "reflect",
+  "payments",
+  "auth",
+  "observability",
+  "analytics",
+  "email-transactional",
+  "launch-checklist",
+  "ci",
+  "og-images",
+  "waitlist",
+  "cookie-consent",
+  "a11y",
+  "free-trial",
+  "bundle-analysis",
+  "i18n",
+  "db-migrate",
+  "load-test",
+  "push-notifications",
+  "context",
+  "agent-quality",
+  "youtube-to-skill",
+]
+
 const flagships = [
   // Row 1
   {
@@ -100,43 +136,6 @@ const flagships = [
     badges: repoBadges("amajorai/skills", "experimental"),
   },
 ]
-
-const utilitySkills = [
-  "edge-cases",
-  "e2e",
-  "icons",
-  "hardening",
-  "seo",
-  "lighthouse",
-  "legal-compliance",
-  "app-store-compliance",
-  "aso",
-  "better-t-stack",
-  "distill-skill",
-  "mirror",
-  "reflect",
-  "payments",
-  "auth",
-  "observability",
-  "analytics",
-  "email-transactional",
-  "launch-checklist",
-  "ci",
-  "og-images",
-  "waitlist",
-  "cookie-consent",
-  "a11y",
-  "free-trial",
-  "bundle-analysis",
-  "i18n",
-  "db-migrate",
-  "load-test",
-  "push-notifications",
-  "context",
-  "agent-quality",
-  "youtube-to-skill",
-]
-
 
 function SkillCard({ emoji, name, tagline, commands, install, href, badges, isNew }: {
   emoji: string; name: string; tagline: string; commands: string;
