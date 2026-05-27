@@ -89,7 +89,7 @@ function ToggleNodeComponent(_: NodeProps) {
   return (
     <button
       onClick={(e) => { e.stopPropagation(); onToggle() }}
-      className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "gap-2 text-muted-foreground cursor-pointer")}
+      className={cn(buttonVariants({ variant: "default", size: "sm" }), "gap-2 cursor-pointer")}
     >
       <HugeiconsIcon icon={mode === "grid" ? Flowchart01Icon : GridViewIcon} size={14} />
       {mode === "grid" ? "View relationships" : "View as grid"}
