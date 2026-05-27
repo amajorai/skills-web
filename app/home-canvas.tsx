@@ -170,6 +170,13 @@ function e(id: string, source: string, target: string, label: string): Edge {
 // ─── Edges ───────────────────────────────────────────────────────────────────
 
 const flowEdges: Edge[] = [
+  e("amajor-spec",   "amajor", "spec",   "discover"),
+  e("amajor-ship",   "amajor", "ship",   "discover"),
+  e("amajor-fix",    "amajor", "fix",    "discover"),
+  e("amajor-replay", "amajor", "replay", "discover"),
+  e("amajor-vibe",   "amajor", "vibe",   "discover"),
+  e("amajor-party",  "amajor", "party",  "discover"),
+  e("amajor-skills", "amajor", "skills", "discover"),
   e("vibe-ship",    "vibe",   "ship",   "dev env ready"),
   e("vibe-party",   "vibe",   "party",  "dev env ready"),
   e("spec-ship",    "spec",   "ship",   "one unit at a time"),
