@@ -26,7 +26,7 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <GlimmIntro />
+          {/* <GlimmIntro /> */}
           {children}
         </ThemeProvider>
       </body>
