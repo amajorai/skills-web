@@ -16,6 +16,18 @@ function repoBadges(repo: string, status: "beta" | "experimental") {
 }
 
 const flagships = [
+  // Row 1
+  {
+    emoji: "👻",
+    name: "spec.md",
+    tagline:
+      "Spec-driven development. Takes any task and breaks it into the smallest possible atomic units — each one agent-ready with clear acceptance criteria. The first step before /ship or /party.",
+    commands: "/spec",
+    install: "npx skills add amajorai/spec.md",
+    href: "https://github.com/amajorai/spec.md",
+    badges: repoBadges("amajorai/spec.md", "beta"),
+    isNew: true,
+  },
   {
     emoji: "📦",
     name: "ship.md",
@@ -26,6 +38,27 @@ const flagships = [
     href: "https://github.com/amajorai/ship.md",
     badges: repoBadges("amajorai/ship.md", "beta"),
   },
+  {
+    emoji: "🔎",
+    name: "fix.md",
+    tagline:
+      "A systematic bug-fixing workflow. Explore first, instrument strategically, read the logs, fix surgically, verify clean with Playwright, Maestro, or Computer Use.",
+    commands: "/fix",
+    install: "npx skills add amajorai/fix.md",
+    href: "https://github.com/amajorai/fix.md",
+    badges: repoBadges("amajorai/fix.md", "experimental"),
+  },
+  {
+    emoji: "🎬",
+    name: "replay.md",
+    tagline:
+      "Record a live video of your running app and share the link, straight from chat. Cursor has it. Now Claude Code has it too.",
+    commands: "/replay",
+    install: "npx skills add amajorai/replay.md",
+    href: "https://github.com/amajorai/replay.md",
+    badges: repoBadges("amajorai/replay.md", "experimental"),
+  },
+  // Row 2
   {
     emoji: "🪅",
     name: "vibe.md",
@@ -45,17 +78,6 @@ const flagships = [
     install: "npx skills add amajorai/party.md",
     href: "https://github.com/amajorai/party.md",
     badges: repoBadges("amajorai/party.md", "experimental"),
-  },
-  {
-    emoji: "🎬",
-    name: "replay.md",
-    tagline:
-      "Record a live video of your running app and share the link, straight from chat. Cursor has it. Now Claude Code has it too.",
-    commands: "/replay",
-    install: "npx skills add amajorai/replay.md",
-    href: "https://github.com/amajorai/replay.md",
-    badges: repoBadges("amajorai/replay.md", "experimental"),
-    isNew: true,
   },
 ]
 
@@ -96,28 +118,6 @@ const utilitySkills = [
 ]
 
 const otherSkills = [
-  {
-    emoji: "👻",
-    name: "spec.md",
-    tagline:
-      "Spec-driven development. Takes any task and breaks it into the smallest possible atomic units — each one agent-ready with clear acceptance criteria. The first step before /ship or /party.",
-    commands: "/spec",
-    install: "npx skills add amajorai/spec.md",
-    href: "https://github.com/amajorai/spec.md",
-    badges: repoBadges("amajorai/spec.md", "beta"),
-    isNew: true,
-  },
-  {
-    emoji: "🔎",
-    name: "fix.md",
-    tagline:
-      "A systematic bug-fixing workflow. Explore first, instrument strategically, read the logs, fix surgically, verify clean with Playwright, Maestro, or Computer Use.",
-    commands: "/fix",
-    install: "npx skills add amajorai/fix.md",
-    href: "https://github.com/amajorai/fix.md",
-    badges: repoBadges("amajorai/fix.md", "experimental"),
-    isNew: true,
-  },
   {
     emoji: "🌼",
     name: "amajor.md",
