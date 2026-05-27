@@ -17,17 +17,6 @@ function repoBadges(repo: string, status: "beta" | "experimental") {
 
 const flagships = [
   {
-    emoji: "👻",
-    name: "spec.md",
-    tagline:
-      "Spec-driven development. Takes any task and breaks it into the smallest possible atomic units — each one agent-ready with clear acceptance criteria. The first step before /ship or /party.",
-    commands: "/spec",
-    install: "npx skills add amajorai/spec.md",
-    href: "https://github.com/amajorai/spec.md",
-    badges: repoBadges("amajorai/spec.md", "beta"),
-    isNew: true,
-  },
-  {
     emoji: "📦",
     name: "ship.md",
     tagline:
@@ -107,6 +96,17 @@ const utilitySkills = [
 ]
 
 const otherSkills = [
+  {
+    emoji: "👻",
+    name: "spec.md",
+    tagline:
+      "Spec-driven development. Takes any task and breaks it into the smallest possible atomic units — each one agent-ready with clear acceptance criteria. The first step before /ship or /party.",
+    commands: "/spec",
+    install: "npx skills add amajorai/spec.md",
+    href: "https://github.com/amajorai/spec.md",
+    badges: repoBadges("amajorai/spec.md", "beta"),
+    isNew: true,
+  },
   {
     emoji: "🔎",
     name: "fix.md",
