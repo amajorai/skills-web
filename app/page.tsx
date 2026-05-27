@@ -15,41 +15,6 @@ function repoBadges(repo: string, status: "beta" | "experimental") {
   ]
 }
 
-const utilitySkills = [
-  "edge-cases",
-  "e2e",
-  "icons",
-  "hardening",
-  "seo",
-  "lighthouse",
-  "legal-compliance",
-  "app-store-compliance",
-  "aso",
-  "better-t-stack",
-  "distill-skill",
-  "mirror",
-  "reflect",
-  "payments",
-  "auth",
-  "observability",
-  "analytics",
-  "email-transactional",
-  "launch-checklist",
-  "ci",
-  "og-images",
-  "waitlist",
-  "cookie-consent",
-  "a11y",
-  "free-trial",
-  "bundle-analysis",
-  "i18n",
-  "db-migrate",
-  "load-test",
-  "push-notifications",
-  "context",
-  "agent-quality",
-  "youtube-to-skill",
-]
 
 const flagships = [
   // Row 1
@@ -130,7 +95,7 @@ const flagships = [
     name: "amajorai/skills",
     tagline:
       "Smaller skills people don't think about when shipping. Edge cases, E2E, auth, payments, SEO, CI, and more.",
-    commands: `+${utilitySkills.length} skills`,
+    commands: "30+ skills",
     install: "npx skills add amajorai/skills",
     href: "https://github.com/amajorai/skills",
     badges: repoBadges("amajorai/skills", "experimental"),
