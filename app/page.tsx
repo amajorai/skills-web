@@ -79,6 +79,26 @@ const flagships = [
     href: "https://github.com/amajorai/party.md",
     badges: repoBadges("amajorai/party.md", "experimental"),
   },
+  {
+    emoji: "🌼",
+    name: "amajor.md",
+    tagline:
+      "Master skill directory. One install, discover every A Major skill. Built for agents to find the right tool for any task.",
+    commands: "/amajor",
+    install: "npx skills add amajorai/amajor.md",
+    href: "https://github.com/amajorai/amajor.md",
+    badges: repoBadges("amajorai/amajor.md", "beta"),
+  },
+  {
+    emoji: "⚡",
+    name: "amajorai/skills",
+    tagline:
+      "Smaller skills people don't think about when shipping. Edge cases, E2E, auth, payments, SEO, CI, and more.",
+    commands: `+${utilitySkills.length} skills`,
+    install: "npx skills add amajorai/skills",
+    href: "https://github.com/amajorai/skills",
+    badges: repoBadges("amajorai/skills", "experimental"),
+  },
 ]
 
 const utilitySkills = [
@@ -117,28 +137,6 @@ const utilitySkills = [
   "youtube-to-skill",
 ]
 
-const otherSkills = [
-  {
-    emoji: "🌼",
-    name: "amajor.md",
-    tagline:
-      "Master skill directory. One install, discover every A Major skill. Built for agents to find the right tool for any task.",
-    commands: "/amajor",
-    install: "npx skills add amajorai/amajor.md",
-    href: "https://github.com/amajorai/amajor.md",
-    badges: repoBadges("amajorai/amajor.md", "beta"),
-  },
-  {
-    emoji: "⚡",
-    name: "amajorai/skills",
-    tagline:
-      "Smaller skills people don't think about when shipping. Edge cases, E2E, auth, payments, SEO, CI, and more.",
-    commands: `+${utilitySkills.length} skills`,
-    install: "npx skills add amajorai/skills",
-    href: "https://github.com/amajorai/skills",
-    badges: repoBadges("amajorai/skills", "experimental"),
-  },
-]
 
 function SkillCard({ emoji, name, tagline, commands, install, href, badges, isNew }: {
   emoji: string; name: string; tagline: string; commands: string;
@@ -198,20 +196,10 @@ export default function Page() {
         </p>
       </section>
 
-      <section className="mb-16 max-w-screen-2xl mx-auto">
-<div className="grid grid-cols-1 sm:grid-cols-4 gap-x-12 gap-y-12">
+      <section className="max-w-screen-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-x-12 gap-y-12">
           {flagships.map((f) => (
             <SkillCard key={f.name} {...f} />
-          ))}
-        </div>
-      </section>
-
-      <section className="max-w-screen-2xl mx-auto">
-<div className="flex flex-wrap justify-center gap-x-12 gap-y-12">
-          {otherSkills.map((s) => (
-            <div key={s.name} className="w-full sm:w-[calc(25%-2.25rem)]">
-              <SkillCard {...s} />
-            </div>
           ))}
         </div>
       </section>
