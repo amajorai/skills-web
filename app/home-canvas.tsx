@@ -227,21 +227,21 @@ const initialNodes: Node[] = [
   {
     id: "header",
     type: "header",
-    position: FLOW_POSITIONS.header,
+    position: GRID_POSITIONS.header,
     data: {} as HeaderData,
     draggable: true,
   },
   {
     id: "toggle",
     type: "toggle",
-    position: FLOW_POSITIONS.toggle,
+    position: GRID_POSITIONS.toggle,
     data: {},
     draggable: true,
   },
   ...allSkills.map((s) => ({
     id: s.id,
     type: "skill" as const,
-    position: FLOW_POSITIONS[s.id],
+    position: GRID_POSITIONS[s.id],
     data: s.data,
     draggable: true,
   })),
@@ -272,21 +272,10 @@ export function HomeCanvas() {
 function HomeCanvasInner() {
   const { resolvedTheme } = useTheme()
   const { fitView } = useReactFlow()
-  const [mode, setMode] = useState<Mode>("flow")
+  const [mode, setMode] = useState<Mode>("grid")
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
-  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>(flowEdges)
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([])
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  // On mount, apply any saved flow positions from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem(FLOW_LS_KEY)
-    if (!saved) return
-    try {
-      const positions = { ...FLOW_POSITIONS, ...JSON.parse(saved) }
-      setNodes((prev) => prev.map((n) => ({ ...n, position: positions[n.id] ?? n.position })))
-    } catch {}
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   // Debounced save of flow positions to localStorage whenever nodes move in flow mode
   useEffect(() => {
@@ -341,7 +330,7 @@ function HomeCanvasInner() {
           zoomOnDoubleClick={false}
           nodesConnectable={false}
           fitView
-          fitViewOptions={{ padding: 0.2 }}
+          fitViewOptions={{ padding: 0.55 }}
           proOptions={{ hideAttribution: true }}
           style={{ background: "var(--background)" }}
         >
