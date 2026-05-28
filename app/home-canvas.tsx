@@ -179,7 +179,6 @@ const flowEdges: Edge[] = [
   e("skills-vibe",    "skills",  "vibe",    "hardening"),
   e("ship-fix",       "ship",    "fix",     "when it breaks"),
   e("ship-replay",    "ship",    "replay",  "record proof"),
-  e("fix-ship",       "fix",     "ship",    "re-ship after fix"),
   e("party-replay",   "party",   "replay",  "per build"),
   e("fix-replay",     "fix",     "replay",  "before & after"),
   e("vibe-sandbox",   "vibe",    "sandbox", "host server"),
