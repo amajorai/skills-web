@@ -209,7 +209,7 @@ const FLOW_POSITIONS: Record<string, { x: number; y: number }> = {
   header:  { x: -626,  y: -1097 },
   toggle:  { x: -635,  y: -992 },
   amajor:  { x: 560,   y: -488 },
-  context: { x: -1047, y: -715 },
+  context: { x: -1271, y: -637 },
   spec:    { x: -209,  y: -186 },
   skills:  { x: -269,  y: 503 },
   ship:    { x: -1066, y: 671 },
