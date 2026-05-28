@@ -206,18 +206,18 @@ const GRID_POSITIONS: Record<string, { x: number; y: number }> = {
 }
 
 const FLOW_POSITIONS: Record<string, { x: number; y: number }> = {
-  header:  { x: -626,  y: -1097 },
-  toggle:  { x: -635,  y: -992 },
-  amajor:  { x: 560,   y: -488 },
+  header:  { x: -1924, y: -919 },
+  toggle:  { x: -1917, y: -810 },
+  amajor:  { x: -492,  y: -818 },
   context: { x: -1271, y: -637 },
-  spec:    { x: -209,  y: -186 },
-  skills:  { x: -269,  y: 503 },
-  ship:    { x: -1066, y: 671 },
-  vibe:    { x: 205,   y: 1167 },
-  sandbox: { x: -1447, y: 1412 },
-  party:   { x: 1099,  y: 1411 },
-  fix:     { x: -884,  y: 1999 },
-  replay:  { x: 94,    y: 2683 },
+  spec:    { x: -485,  y: -252 },
+  skills:  { x: -1943, y: -59 },
+  ship:    { x: -1082, y: 371 },
+  fix:     { x: -1852, y: 549 },
+  party:   { x: -331,  y: 917 },
+  vibe:    { x: -2377, y: 1047 },
+  sandbox: { x: -1943, y: 1520 },
+  replay:  { x: -1122, y: 1923 },
 }
 
 // ─── Nodes ───────────────────────────────────────────────────────────────────
