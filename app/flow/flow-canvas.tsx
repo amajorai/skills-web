@@ -107,7 +107,7 @@ function badge(status: "beta" | "experimental") {
 
 const initialNodes: Node[] = [
   {
-    id: "amajor", type: "skill", position: { x: 1200, y: 1216 },
+    id: "amajor", type: "skill", position: { x: 776, y: 1206 },
     data: {
       emoji: "🌼", name: "amajor.md",
       tagline: "Master skill directory. One install, discover every A Major skill. Built for agents to find the right tool for any task.",
@@ -118,7 +118,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "vibe", type: "skill", position: { x: -68, y: -6 },
+    id: "vibe", type: "skill", position: { x: -625, y: -401 },
     data: {
       emoji: "🪅", name: "vibe.md",
       tagline: "Spin up a 24/7 production-ready full-stack dev and deploy environment. One interview, one clean pass.",
@@ -129,7 +129,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "spec", type: "skill", position: { x: 464, y: -109 },
+    id: "spec", type: "skill", position: { x: 606, y: -373 },
     data: {
       emoji: "👻", name: "spec.md",
       tagline: "Spec-driven development. Takes any task and breaks it into the smallest possible atomic units — each one agent-ready with clear acceptance criteria.",
@@ -141,7 +141,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "skills", type: "skill", position: { x: 1121, y: 226 },
+    id: "skills", type: "skill", position: { x: 900, y: 246 },
     data: {
       emoji: "⚡", name: "amajorai/skills",
       tagline: "Smaller skills people don't think about when shipping. Edge cases, E2E, auth, payments, SEO, CI, and more.",
@@ -152,7 +152,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "ship", type: "skill", position: { x: 436, y: 686 },
+    id: "ship", type: "skill", position: { x: -199, y: 763 },
     data: {
       emoji: "📦", name: "ship.md",
       tagline: "A thin, structured workflow for shipping features. Simple, minimal, lean. One interview, one plan, ship the thing.",
@@ -163,7 +163,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "party", type: "skill", position: { x: 1243, y: 739 },
+    id: "party", type: "skill", position: { x: -38, y: 106 },
     data: {
       emoji: "🎉", name: "party.md",
       tagline: "Most AI dev tools stop when you close your laptop. party.md doesn't. GitHub Projects as the interface - drop in issues, it ships them while you sleep.",
@@ -174,7 +174,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "fix", type: "skill", position: { x: -261, y: 892 },
+    id: "fix", type: "skill", position: { x: -396, y: 1517 },
     data: {
       emoji: "🔎", name: "fix.md",
       tagline: "A systematic bug-fixing workflow. Explore first, instrument strategically, read the logs, fix surgically, verify clean.",
@@ -185,7 +185,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "replay", type: "skill", position: { x: 692, y: 1407 },
+    id: "replay", type: "skill", position: { x: 442, y: 2108 },
     data: {
       emoji: "🎬", name: "replay.md",
       tagline: "Record a live video of your running app and share the link, straight from chat. Cursor has it. Now Claude Code has it too.",
@@ -196,7 +196,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "sandbox", type: "skill", position: { x: 73, y: 1366 },
+    id: "sandbox", type: "skill", position: { x: -709, y: 1047 },
     data: {
       emoji: "🧪", name: "sandbox.md",
       tagline: "Build and verify features inside an isolated cloud sandbox — ship from a clean environment every time.",
@@ -207,7 +207,7 @@ const initialNodes: Node[] = [
     },
   },
   {
-    id: "context", type: "skill", position: { x: -483, y: 375 },
+    id: "context", type: "skill", position: { x: -1156, y: 11 },
     data: {
       emoji: "📋", name: "context.md",
       tagline: "Initialize CLAUDE.md and AGENTS.md for the current workspace. Explores the codebase, interviews for gaps, and writes structured context files so every agent starts fully oriented.",
