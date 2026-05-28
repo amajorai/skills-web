@@ -170,17 +170,22 @@ function e(id: string, source: string, target: string, label: string): Edge {
 // ─── Edges ───────────────────────────────────────────────────────────────────
 
 const flowEdges: Edge[] = [
-  e("vibe-ship",    "vibe",   "ship",   "dev env ready"),
-  e("vibe-party",   "vibe",   "party",  "dev env ready"),
-  e("spec-ship",    "spec",   "ship",   "one unit at a time"),
-  e("spec-party",   "spec",   "party",  "ship all 24/7"),
-  e("skills-ship",  "skills", "ship",   "quality gates"),
-  e("ship-fix",     "ship",   "fix",    "when it breaks"),
-  e("ship-replay",  "ship",   "replay", "record proof"),
-  e("party-replay", "party",  "replay", "per build"),
-  e("fix-replay",   "fix",    "replay",   "before & after"),
-  e("vibe-sandbox", "vibe",   "sandbox",  "host server"),
-  e("ship-sandbox", "ship",   "sandbox",  "build in isolation"),
+  e("vibe-ship",      "vibe",    "ship",    "dev env ready"),
+  e("vibe-party",     "vibe",    "party",   "dev env ready"),
+  e("spec-ship",      "spec",    "ship",    "one unit at a time"),
+  e("spec-party",     "spec",    "party",   "ship all 24/7"),
+  e("skills-ship",    "skills",  "ship",    "quality gates"),
+  e("skills-fix",     "skills",  "fix",     "diagnostic tools"),
+  e("skills-vibe",    "skills",  "vibe",    "hardening"),
+  e("ship-fix",       "ship",    "fix",     "when it breaks"),
+  e("ship-replay",    "ship",    "replay",  "record proof"),
+  e("fix-ship",       "fix",     "ship",    "re-ship after fix"),
+  e("party-replay",   "party",   "replay",  "per build"),
+  e("fix-replay",     "fix",     "replay",  "before & after"),
+  e("vibe-sandbox",   "vibe",    "sandbox", "host server"),
+  e("ship-sandbox",   "ship",    "sandbox", "build in isolation"),
+  e("context-spec",   "context", "spec",    "orient first"),
+  e("context-ship",   "context", "ship",    "orient first"),
 ]
 
 // ─── Positions ───────────────────────────────────────────────────────────────
@@ -202,18 +207,18 @@ const GRID_POSITIONS: Record<string, { x: number; y: number }> = {
 }
 
 const FLOW_POSITIONS: Record<string, { x: number; y: number }> = {
-  header: { x: 400,  y: -340 },
-  toggle: { x: 400,  y: -220 },
-  vibe:   { x: 16,   y: 86 },
-  spec:   { x: 575,  y: -116 },
-  skills: { x: 1124, y: 170 },
-  ship:   { x: 272,  y: 574 },
-  party:  { x: 862,  y: 582 },
-  fix:    { x: 0,    y: 920 },
-  replay: { x: 581,  y: 1321 },
-  amajor:  { x: 1191, y: 1025 },
-  sandbox: { x: 272,  y: 1200 },
-  context: { x: -200, y: 350 },
+  header:  { x: -132, y: -705 },
+  toggle:  { x: -141, y: -596 },
+  vibe:    { x: -625, y: -401 },
+  spec:    { x: 606,  y: -373 },
+  skills:  { x: 900,  y: 246 },
+  party:   { x: -38,  y: 106 },
+  ship:    { x: -199, y: 763 },
+  fix:     { x: -396, y: 1517 },
+  replay:  { x: 442,  y: 2108 },
+  amajor:  { x: 776,  y: 1206 },
+  sandbox: { x: -709, y: 1047 },
+  context: { x: -1156, y: 11 },
 }
 
 // ─── Nodes ───────────────────────────────────────────────────────────────────
