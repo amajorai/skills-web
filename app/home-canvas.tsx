@@ -198,7 +198,7 @@ const GRID_POSITIONS: Record<string, { x: number; y: number }> = {
   amajor: { x: 680, y: 320 },
   skills: { x: 1020, y: 320 },
   sandbox: { x: 340, y: 640 },
-  ctx:     { x: 680, y: 640 },
+  context: { x: 680, y: 640 },
 }
 
 const FLOW_POSITIONS: Record<string, { x: number; y: number }> = {
@@ -213,7 +213,7 @@ const FLOW_POSITIONS: Record<string, { x: number; y: number }> = {
   replay: { x: 581,  y: 1321 },
   amajor:  { x: 1191, y: 1025 },
   sandbox: { x: 272,  y: 1200 },
-  ctx:     { x: -200, y: 350 },
+  context: { x: -200, y: 350 },
 }
 
 // ─── Nodes ───────────────────────────────────────────────────────────────────
@@ -228,7 +228,7 @@ const allSkills: { id: string; data: SkillData }[] = [
   { id: "amajor", data: { emoji: "🌼", name: "amajor.md",       tagline: "Master skill directory. One install, discover every A Major skill. Built for agents to find the right tool for any task.",                                                                    commands: "/amajor",                             install: "npx skills add amajorai/amajor.md", href: "https://github.com/amajorai/amajor.md", badges: badge("beta") } },
   { id: "skills", data: { emoji: "⚡", name: "amajorai/skills", tagline: "Smaller skills people don't think about when shipping. Edge cases, E2E, auth, payments, SEO, CI, and more.",                                                                                  commands: "30+ skills",                          install: "npx skills add amajorai/skills",    href: "https://github.com/amajorai/skills",    badges: badge("experimental") } },
   { id: "sandbox", data: { emoji: "🧪", name: "sandbox.md",      tagline: "Self-hosted cloud sandbox environment. Choose Daytona, Docker+Bun, or Firecracker. Spawn ephemeral exec sandboxes or long-lived dev workspaces on your own server.",                commands: "/sandbox",                            install: "npx skills add amajorai/sandbox.md", href: "https://github.com/amajorai/sandbox.md", badges: badge("beta"), isNew: true } },
-  { id: "ctx",     data: { emoji: "📋", name: "ctx.md",           tagline: "Write and maintain CLAUDE.md and AGENTS.md for any workspace. Explores the codebase, interviews for gaps, and gives every agent full orientation in a single read.",                           commands: "/ctx · /ctx-update",                  install: "npx skills add amajorai/ctx.md",    href: "https://github.com/amajorai/ctx.md",    badges: badge("beta"),         isNew: true } },
+  { id: "context", data: { emoji: "📋", name: "context.md",       tagline: "Write and maintain CLAUDE.md and AGENTS.md for any workspace. Explores the codebase, interviews for gaps, and gives every agent full orientation in a single read.",                           commands: "/context-md · /context-md-update",    install: "npx skills add amajorai/context.md", href: "https://github.com/amajorai/context.md", badges: badge("beta"),         isNew: true } },
 ]
 
 const initialNodes: Node[] = [
