@@ -208,7 +208,7 @@ const GRID_POSITIONS: Record<string, { x: number; y: number }> = {
 const FLOW_POSITIONS: Record<string, { x: number; y: number }> = {
   header:  { x: -1924, y: -919 },
   toggle:  { x: -1917, y: -810 },
-  amajor:  { x: -492,  y: -818 },
+  amajor:  { x: -1870, y: -572 },
   context: { x: -1271, y: -637 },
   spec:    { x: -485,  y: -252 },
   skills:  { x: -1943, y: -59 },
