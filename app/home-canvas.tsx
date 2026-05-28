@@ -170,13 +170,6 @@ function e(id: string, source: string, target: string, label: string): Edge {
 // ─── Edges ───────────────────────────────────────────────────────────────────
 
 const flowEdges: Edge[] = [
-  e("amajor-spec",   "amajor", "spec",   "discover"),
-  e("amajor-ship",   "amajor", "ship",   "discover"),
-  e("amajor-fix",    "amajor", "fix",    "discover"),
-  e("amajor-replay", "amajor", "replay", "discover"),
-  e("amajor-vibe",   "amajor", "vibe",   "discover"),
-  e("amajor-party",  "amajor", "party",  "discover"),
-  e("amajor-skills", "amajor", "skills", "discover"),
   e("vibe-ship",    "vibe",   "ship",   "dev env ready"),
   e("vibe-party",   "vibe",   "party",  "dev env ready"),
   e("spec-ship",    "spec",   "ship",   "one unit at a time"),
@@ -185,7 +178,9 @@ const flowEdges: Edge[] = [
   e("ship-fix",     "ship",   "fix",    "when it breaks"),
   e("ship-replay",  "ship",   "replay", "record proof"),
   e("party-replay", "party",  "replay", "per build"),
-  e("fix-replay",   "fix",    "replay", "before & after"),
+  e("fix-replay",   "fix",    "replay",   "before & after"),
+  e("vibe-sandbox", "vibe",   "sandbox",  "host server"),
+  e("ship-sandbox", "ship",   "sandbox",  "build in isolation"),
 ]
 
 // ─── Positions ───────────────────────────────────────────────────────────────
@@ -202,6 +197,8 @@ const GRID_POSITIONS: Record<string, { x: number; y: number }> = {
   party:  { x: 340, y: 320 },
   amajor: { x: 680, y: 320 },
   skills: { x: 1020, y: 320 },
+  sandbox: { x: 340, y: 640 },
+  ctx:     { x: 680, y: 640 },
 }
 
 const FLOW_POSITIONS: Record<string, { x: number; y: number }> = {
@@ -214,7 +211,9 @@ const FLOW_POSITIONS: Record<string, { x: number; y: number }> = {
   party:  { x: 862,  y: 582 },
   fix:    { x: 0,    y: 920 },
   replay: { x: 581,  y: 1321 },
-  amajor: { x: 1191, y: 1025 },
+  amajor:  { x: 1191, y: 1025 },
+  sandbox: { x: 272,  y: 1200 },
+  ctx:     { x: -200, y: 350 },
 }
 
 // ─── Nodes ───────────────────────────────────────────────────────────────────
@@ -228,6 +227,8 @@ const allSkills: { id: string; data: SkillData }[] = [
   { id: "party",  data: { emoji: "🎉", name: "party.md",        tagline: "Most AI dev tools stop when you close your laptop. party.md doesn't. GitHub Projects as the interface - drop in issues, it ships them while you sleep.",                                      commands: "/party",                              install: "npx skills add amajorai/party.md",  href: "https://github.com/amajorai/party.md",  badges: badge("experimental") } },
   { id: "amajor", data: { emoji: "🌼", name: "amajor.md",       tagline: "Master skill directory. One install, discover every A Major skill. Built for agents to find the right tool for any task.",                                                                    commands: "/amajor",                             install: "npx skills add amajorai/amajor.md", href: "https://github.com/amajorai/amajor.md", badges: badge("beta") } },
   { id: "skills", data: { emoji: "⚡", name: "amajorai/skills", tagline: "Smaller skills people don't think about when shipping. Edge cases, E2E, auth, payments, SEO, CI, and more.",                                                                                  commands: "30+ skills",                          install: "npx skills add amajorai/skills",    href: "https://github.com/amajorai/skills",    badges: badge("experimental") } },
+  { id: "sandbox", data: { emoji: "🧪", name: "sandbox.md",      tagline: "Self-hosted cloud sandbox environment. Choose Daytona, Docker+Bun, or Firecracker. Spawn ephemeral exec sandboxes or long-lived dev workspaces on your own server.",                commands: "/sandbox",                            install: "npx skills add amajorai/sandbox.md", href: "https://github.com/amajorai/sandbox.md", badges: badge("beta"), isNew: true } },
+  { id: "ctx",     data: { emoji: "📋", name: "ctx.md",           tagline: "Write and maintain CLAUDE.md and AGENTS.md for any workspace. Explores the codebase, interviews for gaps, and gives every agent full orientation in a single read.",                           commands: "/ctx · /ctx-update",                  install: "npx skills add amajorai/ctx.md",    href: "https://github.com/amajorai/ctx.md",    badges: badge("beta"),         isNew: true } },
 ]
 
 const initialNodes: Node[] = [
